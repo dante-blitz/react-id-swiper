@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "build:cleanup": "rimraf lib",
-    "build:lib": "yarn build:cleanup && tsc",
+    "build:lib": "npm run build:cleanup && tsc",
     "build:standalone": "cross-env BABEL_ENV=production webpack",
-    "build": "yarn build:lib && yarn build:standalone && yarn copy:stylesheet",
+    "build": "npm run build:lib && npm run build:standalone && npm run copy:stylesheet",
     "lint:ts": "eslint 'src/**/*.ts?(x)'",
     "lint:ts:fix": "eslint --fix 'src/**/*.ts?(x)'",
     "copy:package": "cp -rf package.json lib",
@@ -19,9 +19,9 @@
     "test": "jest",
     "test:dev": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
-    "prepare": "yarn build",
-    "preversion": "yarn lint:ts",
-    "prepublishOnly": "yarn test && yarn lint:ts",
+    "prepare": "npm run build",
+    "preversion": "npm run lint:ts",
+    "prepublishOnly": "npm run test && npm run lint:ts"
   },
   "keywords": [
     "iDangerous",
