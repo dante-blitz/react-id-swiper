@@ -21,6 +21,7 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
     containerClass,
     getSwiper,
     navigation,
+    navWrapper,
     noSwiping,
     pagination,
     parallax,
@@ -188,14 +189,33 @@ const ReactIdSwiperCustom: FunctionComponent<ReactIdSwiperCustomProps> = props =
   const shouldRenderNextButton = isNavigationModuleAvailable && navigation && navigation.nextEl;
   const shouldRenderPrevButton = isNavigationModuleAvailable && navigation && navigation.prevEl;
 
+  const NavButtons = () => (
+    <>
+      {shouldRenderPrevButton && renderPrevButton && renderPrevButton(props)}
+      { shouldRenderNextButton && renderNextButton && renderNextButton(props)}
+    </>
+  )
+
+  const Nav = () => (
+    <>
+      { shouldRenderPagination && renderPagination && renderPagination(props) }
+      { shouldRenderScrollbar && renderScrollbar && renderScrollbar(props) }
+      <NavButtons />
+    </>
+  )
+
   return (
     <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
       {shouldRenderParallax && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
-      {shouldRenderPagination && renderPagination && renderPagination(props)}
-      {shouldRenderScrollbar && renderScrollbar && renderScrollbar(props)}
-      {shouldRenderNextButton && renderNextButton && renderNextButton(props)}
-      {shouldRenderPrevButton && renderPrevButton && renderPrevButton(props)}
+      {navWrapper ? (
+        <div className="swiper-nav-wrapper">
+          <Nav />
+        </div>
+      ) : (
+        <Nav />
+      )}
+      
     </ContainerEl>
   );
 };

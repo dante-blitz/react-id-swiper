@@ -19,6 +19,7 @@ export interface ReactIdSwiperProps extends SwiperOptions {
   wrapperClass?: string;
   slideClass?: string;
   rebuildOnUpdate?: boolean;
+  navWrapper?: boolean;
   shouldSwiperUpdate?: boolean;
   getSwiper?: GetSwiper;
   activeSlideKey?: string;
