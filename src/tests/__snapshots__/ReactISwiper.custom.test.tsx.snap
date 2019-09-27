@@ -61,10 +61,10 @@ exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render navi
     </div>
   </div>
   <div
-    class="swiper-button-next"
+    class="swiper-button-prev"
   />
   <div
-    class="swiper-button-prev"
+    class="swiper-button-next"
   />
 </div>
 `;
@@ -88,10 +88,10 @@ exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render pagi
     </div>
   </div>
   <div
-    class="swiper-button-next customized-swiper-button-next"
+    class="swiper-button-prev customized-swiper-button-prev"
   />
   <div
-    class="swiper-button-prev customized-swiper-button-prev"
+    class="swiper-button-next customized-swiper-button-next"
   />
 </div>
 `;
@@ -115,10 +115,10 @@ exports[`ReactIdSwiperCustom rendering snapshot Navigation it should render pagi
     </div>
   </div>
   <div
-    class="swiper-button-next"
+    class="swiper-button-prev"
   />
   <div
-    class="swiper-button-prev"
+    class="swiper-button-next"
   />
 </div>
 `;
