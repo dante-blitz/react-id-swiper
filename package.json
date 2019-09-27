@@ -21,7 +21,8 @@
     "test:coverage": "jest --coverage",
     "prepare": "yarn build",
     "preversion": "yarn lint:ts",
-    "prepublishOnly": "yarn test && yarn lint:ts"
+    "prepublishOnly": "yarn test && yarn lint:ts",
+    "postinstall": "cd ./node_modules/react-id-swiper && yarn install && yarn build"
   },
   "keywords": [
     "iDangerous",
