@@ -20,7 +20,6 @@
     "test:dev": "jest --watch --coverage",
     "test:coverage": "jest --coverage",
     "prepare": "yarn build",
-    "preversion": "yarn lint:ts",
     "prepublishOnly": "yarn test"
   },
   "keywords": [
