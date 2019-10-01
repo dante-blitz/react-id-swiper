@@ -21,6 +21,7 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     containerClass,
     getSwiper,
     navigation,
+    navWrapper,
     noSwiping,
     pagination,
     parallax,
@@ -173,14 +174,34 @@ const ReactIdSwiper: FunctionComponent<ReactIdSwiperProps> = props => {
     }
   });
 
+
+  const NavButtons = () => (
+    <>
+      {navigation && navigation.nextEl && renderNextButton && renderNextButton(props)}
+      {navigation && navigation.prevEl && renderPrevButton && renderPrevButton(props)}
+    </>
+  )
+
+  const Nav = () => (
+    <>
+      {pagination && pagination.el && renderPagination && renderPagination(props)}
+      {scrollbar && scrollbar.el && renderScrollbar && renderScrollbar(props)}
+      <NavButtons />
+    </>
+  )
+
+
   return (
     <ContainerEl className={containerClass} dir={rtl && 'rtl'} ref={swiperNodeRef}>
       {parallax && parallaxEl && renderParallax && renderParallax(props)}
       <WrapperEl className={wrapperClass}>{Children.map(children, renderContent)}</WrapperEl>
-      {pagination && pagination.el && renderPagination && renderPagination(props)}
-      {scrollbar && scrollbar.el && renderScrollbar && renderScrollbar(props)}
-      {navigation && navigation.nextEl && renderNextButton && renderNextButton(props)}
-      {navigation && navigation.prevEl && renderPrevButton && renderPrevButton(props)}
+      {navWrapper ? (
+        <div className="swiper-nav-wrapper">
+          <Nav />
+        </div>
+      ) : (
+          <Nav />
+        )}
     </ContainerEl>
   );
 };

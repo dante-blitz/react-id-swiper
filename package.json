@@ -21,7 +21,7 @@
     "test:coverage": "jest --coverage",
     "prepare": "yarn build",
     "preversion": "yarn lint:ts",
-    "prepublishOnly": "yarn test && yarn lint:ts"
+    "prepublishOnly": "yarn test"
   },
   "keywords": [
     "iDangerous",
