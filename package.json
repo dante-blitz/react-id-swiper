@@ -1,6 +1,6 @@
 {
   "name": "@danteblitz/react-id-swiper",
-  "version": "2.4.0",
+  "version": "2.3.3",
   "description": "A custom implementation of ReactJs component for iDangerous Swiper",
   "main": "lib/index",
   "types": "lib/index.d.ts",
